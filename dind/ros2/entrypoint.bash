@@ -4,7 +4,7 @@ echo ''
 echo '======== Loading the ROS 2 environment ========'
 echo ''
 
-CMD="source /opt/ros/${ROS2_DISTRO}/setup.sh"
+CMD="source /opt/ros/humble/setup.sh"
 echo "$CMD" && eval "$CMD" || exit $?
 
 echo ''
