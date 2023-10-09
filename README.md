@@ -1,1 +1,44 @@
 # roboware-ci
+
+## How to use
+
+simple build test
+
+```yaml
+name: build test
+on:
+ pull_request:
+    branches: [ main ]
+ push:
+    branches: [ main ]
+jobs:
+ build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out
+      uses: actions/checkout@v3
+    - name: Building
+      uses: roboware-org/roboware-ci@1.0.1
+```
+
+with deb pkg
+
+```yaml
+name: Build test
+on:
+ pull_request:
+    branches: [ main ]
+ push:
+    branches: [ main ]
+jobs:
+ build-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out
+      uses: actions/checkout@v3
+    - name: Building
+      uses: roboware-org/roboware-ci@1.0.1
+      with:
+       apt-url-packages: https://github.com/roboware-org/roboware/raw/pkg/ros-humble-scgw-msgs_1.0.0-0jammy_amd64.deb 
+```
+
