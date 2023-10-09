@@ -13,9 +13,10 @@ then
   echo '======== Installing APT packages ========'
   echo ''
 
+  mkdir /apt && cd /apt && \
   echo "$APT_URL_PACKAGES" && apt-get update && \
   wget $APT_URL_PACKAGES && \
-  apt-get install -y ./* || exit $?
+  apt-get install -y /apt/*.deb || exit $?
 fi
 
 echo ''
