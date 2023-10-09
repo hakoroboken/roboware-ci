@@ -1,6 +1,6 @@
 FROM takanotaiga/roboware_base:humble
 
-RUN apt install -y wget
+RUN apt install -y wget libudev-dev
 
 COPY ws /ws
 
