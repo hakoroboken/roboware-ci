@@ -1,4 +1,4 @@
-FROM takanotaiga/roboware_base:humble
+FROM ghcr.io/roboware-org/roboware-ci:main
 
 RUN apt install -y wget libudev-dev
 
