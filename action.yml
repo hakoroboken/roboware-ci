@@ -1,0 +1,10 @@
+name: 'roboware CI'
+description: 'CI for roboware'
+author: "Taiga Takano"
+branding:
+  icon: "activity"
+  color: "gray-dark"
+
+runs:
+  using: 'docker'
+  image: 'dind/Dockerfile'
