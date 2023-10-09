@@ -5,6 +5,13 @@ branding:
   icon: "activity"
   color: "gray-dark"
 
+inputs:
+  apt-url-packages:
+    description: "APT packages to be installed as dependencies."
+    required: false
+
 runs:
   using: 'docker'
   image: 'dind/Dockerfile'
+  args:
+    - '${{ inputs.apt-url-packages }}'

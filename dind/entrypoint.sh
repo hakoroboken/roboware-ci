@@ -1,5 +1,7 @@
 #!/bin/sh
 
+APT_URL_PACKAGES="${1}"
+
 echo ''
 echo '======== Running the Docker daemon ========'
 echo ''
@@ -22,4 +24,5 @@ echo '======== Running the ROS 2 container ========'
 echo ''
 
 docker run \
+  --env APT_URL_PACKAGES="${APT_URL_PACKAGES}" \  
   --rm ros2-ci:latest || exit $?

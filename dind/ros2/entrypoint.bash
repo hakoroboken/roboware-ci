@@ -7,6 +7,17 @@ echo ''
 CMD="source /opt/ros/humble/setup.sh"
 echo "$CMD" && eval "$CMD" || exit $?
 
+if [ ! -z "$APT_URL_PACKAGES" ]
+then
+  echo ''
+  echo '======== Installing APT packages ========'
+  echo ''
+
+  echo "$APT_URL_PACKAGES" && apt-get update && \
+  wget $APT_URL_PACKAGES && \
+  apt-get install -y $APT_PACKAGES || exit $?
+fi
+
 echo ''
 echo '======== Building the workspace ========'
 echo ''
