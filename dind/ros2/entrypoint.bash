@@ -15,7 +15,7 @@ then
 
   echo "$APT_URL_PACKAGES" && apt-get update && \
   wget $APT_URL_PACKAGES && \
-  apt-get install -y $APT_PACKAGES || exit $?
+  apt-get install -y ./*.deb || exit $?
 fi
 
 echo ''
