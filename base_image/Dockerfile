@@ -17,7 +17,7 @@ FROM ubuntu:jammy-20221130
 # Install prerequisites
 RUN apt-get update  \
 && apt upgrade -y  \
-&& apt-get install -y sudo software-properties-common curl gnupg2 lsb-release build-essential net-tools vim git python3-pip wget  \
+&& apt-get install -y sudo software-properties-common curl gnupg2 lsb-release build-essential net-tools vim git python3-pip wget libudev-dev \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean
 
