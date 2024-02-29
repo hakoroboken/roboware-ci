@@ -1,4 +1,4 @@
-FROM ghcr.io/roboware-org/roboware-ci:main
+FROM ghcr.io/hakoroboken/rwci:latest
 
 COPY ws /ws
 

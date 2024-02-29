@@ -1,7 +1,10 @@
 on:
+  schedule:
+    - cron: '22 9 * * *'
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 name: Docker Build and Push
 
@@ -22,6 +25,7 @@ jobs:
           --tag ghcr.io/hakoroboken/rwci:$(echo $GITHUB_SHA | head -c7) \
           ./base_image
       - name: Push Docker Image
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
           docker push ghcr.io/hakoroboken/rwci:latest
           docker push ghcr.io/hakoroboken/rwci:$(echo $GITHUB_SHA | head -c7)
