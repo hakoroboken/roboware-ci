@@ -9,6 +9,9 @@ inputs:
   apt-url-packages:
     description: "APT packages to be installed as dependencies."
     required: false
+  external-repos:
+    description: "External repositories to be included as dependencies."
+    required: false
 
 runs:
   using: 'docker'

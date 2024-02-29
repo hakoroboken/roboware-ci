@@ -1,6 +1,7 @@
 #!/bin/sh
 
 APT_URL_PACKAGES="${1}"
+EXTERNAL_REPOS="${2}"
 
 echo ''
 echo '======== Running the Docker daemon ========'
@@ -23,4 +24,4 @@ echo ''
 echo '======== Running the ROS 2 container ========'
 echo ''
 
-docker run --env APT_URL_PACKAGES="${APT_URL_PACKAGES}" --rm ros2-ci:latest || exit $?
+docker run --env APT_URL_PACKAGES="${APT_URL_PACKAGES}" --env EXTERNAL_REPOS="${EXTERNAL_REPOS}" --rm ros2-ci:latest || exit $?
