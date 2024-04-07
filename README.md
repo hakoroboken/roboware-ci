@@ -18,7 +18,7 @@ jobs:
     - name: Checking out
       uses: actions/checkout@v3
     - name: Building
-      uses: hakoroboken/roboware-ci@v2
+      uses: hakoroboken/roboware-ci@v3
 ```
 
 with deb pkg
@@ -37,7 +37,7 @@ jobs:
     - name: Checking out
       uses: actions/checkout@v3
     - name: Building
-      uses: hakoroboken/roboware-ci@v2
+      uses: hakoroboken/roboware-ci@v3
       with:
        apt-url-packages: https://github.com/hakoroboken/roboware/raw/pkg/ros-humble-scgw-msgs_1.0.0-0jammy_amd64.deb 
 ```
